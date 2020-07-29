@@ -1,0 +1,22 @@
+{
+  "node": "172.17.0.5",
+  "version": "2.4.0",
+  "clusterId": "onos",
+  "nodes": 3,
+  "devices": 50,
+  "links": 84,
+  "hosts": 48,
+  "sccs": 20,
+  "flows": 144,
+  "intents": 0,
+  "mem": {
+    "current": 256449192,
+    "max": 1776287744,
+    "committed": 1065353216
+  },
+  "threads": {
+    "live": 564,
+    "daemon": 286,
+    "peak": 941
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "nodes": [
+    {
+      "id": "ONOS-2",
+      "ip": "172.17.0.6",
+      "tcpPort": 9876,
+      "status": "ACTIVE",
+      "lastUpdate": "1595935942844",
+      "humanReadableLastUpdate": "7s ago"
+    },
+    {
+      "id": "ONOS-3",
+      "ip": "172.17.0.7",
+      "tcpPort": 9876,
+      "status": "ACTIVE",
+      "lastUpdate": "1595933280409",
+      "humanReadableLastUpdate": "44m29s ago"
+    },
+    {
+      "id": "ONOS-1",
+      "ip": "172.17.0.5",
+      "tcpPort": 9876,
+      "status": "READY",
+      "lastUpdate": "1595933348012",
+      "humanReadableLastUpdate": "43m22s ago"
+    }
+  ]
+}
