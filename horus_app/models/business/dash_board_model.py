@@ -4,7 +4,7 @@ from horus_app.models.basic_model import BasicModel
 from horus_app.models.database.db_models import Camera
 
 
-class DashBoard(BasicModel):
+class DashBoardModel(BasicModel):
 
     def __init__(self):
         BasicModel.__init__(self)

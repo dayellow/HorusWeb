@@ -3,7 +3,7 @@ import json
 from horus_app.models.basic_model import BasicModel
 
 
-class Switch(BasicModel):
+class SwitchModel(BasicModel):
     __page = 0
     __size = 0
 
@@ -19,7 +19,7 @@ class Switch(BasicModel):
 
     def _create_response(self):
         devices = self.__getAllDevices()
-        self._response["data"]["total"], self._response["data"]["nodes"] = \
+        self._response["data"]["total"], self._response["data"]["devices"] = \
             self._get_each_page_elements(devices, self.__page, self.__size)
 
     @staticmethod

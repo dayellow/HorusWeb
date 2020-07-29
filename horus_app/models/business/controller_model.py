@@ -3,7 +3,7 @@ import json
 from horus_app.models.basic_model import BasicModel
 
 
-class Controller(BasicModel):
+class ControllerModel(BasicModel):
     __page = 0
     __size = 0
 
