@@ -14,7 +14,8 @@ class BasicModel(object):
     def get_response(self):
         return self._response
 
-    def _get_each_page_elements(self, complete_list, page, size):
+    @staticmethod
+    def _get_each_page_elements(complete_list, page, size):
         if len(complete_list) % size != 0:
             total = len(complete_list) // size + 1
         else:

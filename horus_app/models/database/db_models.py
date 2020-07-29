@@ -2,13 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
-authority = db.Table('Authority',
-                     db.Column('camera_id', db.Integer,
-                               db.ForeignKey('Camera.camera_id'), primary_key=True),
-                     db.Column('department_id', db.Integer,
-                               db.ForeignKey('Department.department_id'), primary_key=True)
-                     )
-
 
 class Camera(db.Model):
     __tablename__ = 'Camera'
@@ -19,7 +12,6 @@ class Camera(db.Model):
     camera_ip = db.Column(db.VARCHAR(20))
     camera_longitude = db.Column(db.FLOAT)
     camera_latitude = db.Column(db.FLOAT)
-    departments = db.relationship('Department', secondary=authority)
 
 
 class Department(db.Model):
@@ -27,4 +19,20 @@ class Department(db.Model):
 
     department_id = db.Column(db.Integer, primary_key=True)
     department_name = db.Column(db.VARCHAR(50))
-    cameras = db.relationship('Camera', secondary=authority)
+
+
+class User(db.Model):
+    __tablename__ = "User"
+
+    user_id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.VARCHAR(20))
+    department_id = db.Column(db.Integer, db.ForeignKey('Department.department_id'))
+    user_role = db.Column(db.VARCHAR(10))
+
+
+class Authority(db.Model):
+    __tablename__ = "Authority"
+
+    camera_id = db.Column(db.Integer, db.ForeignKey('Camera.camera_id'), primary_key=True)
+    department_id = db.Column(db.Integer,
+                              db.ForeignKey('Department.department_id'), primary_key=True)
