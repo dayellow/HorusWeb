@@ -8,5 +8,15 @@ class BasicModel(object):
             "data": {}
         }
 
+    def _create_response(self):
+        pass
+
     def get_response(self):
         return self._response
+
+    def _get_each_page_elements(self, complete_list, page, size):
+        total = len(complete_list) // size + 1
+        start_index = (page - 1) * size
+        end_index = page * size
+        intercepted_list = complete_list[start_index: end_index]
+        return total, intercepted_list
