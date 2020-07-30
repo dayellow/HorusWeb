@@ -16,10 +16,7 @@ class BasicModel(object):
 
     @staticmethod
     def _get_each_page_elements(complete_list, page, size):
-        if len(complete_list) % size != 0:
-            total = len(complete_list) // size + 1
-        else:
-            total = len(complete_list) // size
+        total = len(complete_list)
         start_index = (page - 1) * size
         end_index = page * size
         intercepted_list = complete_list[start_index: end_index]
